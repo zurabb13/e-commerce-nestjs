@@ -14,7 +14,11 @@ export class ProductService {
 
   //get all products
   async products(): Promise<Product[]> {
-    const product = await this.productModel.find().exec();
+    const product = await this.productModel
+      .find()
+      .populate('category', '-_id -__v')
+      .select('-category._id -__v -_id')
+      .exec();
     return product;
   }
 
