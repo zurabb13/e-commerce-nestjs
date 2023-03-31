@@ -7,6 +7,7 @@ import { ProductModule } from './routes/product/product.module';
 import { CategoryModule } from './routes/category/category.module';
 import { UserModule } from './routes/user/user.module';
 import { AuthModule } from './routes/auth/auth.module';
+import { CartModule } from './routes/cart/cart.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { AuthModule } from './routes/auth/auth.module';
     CategoryModule,
     UserModule,
     AuthModule,
+    CartModule,
   ],
   controllers: [AppController],
   providers: [AppService],

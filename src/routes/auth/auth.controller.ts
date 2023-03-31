@@ -28,8 +28,8 @@ export class AuthController {
     return user;
   }
 
-  @UseGuards(LocalAuthGuard, RolesGuard)
-  @Post('login')
+  @UseGuards(LocalAuthGuard)
+  @Post('/login')
   async login(@Request() req) {
     return this.authService.login(req.user);
   }
